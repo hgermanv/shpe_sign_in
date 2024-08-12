@@ -1,0 +1,31 @@
+<h1 class="text-center">Attendees for <%= @event.name %> on <%= @event.date.strftime("%Y-%m-%d") %></h1>
+
+<h2>Attendees List</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Class Year</th>
+      <th>Major</th>
+      <th>Attended On</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @attendees.each do |attendee| %>
+      <tr>
+        <td><%= attendee.name %></td>
+        <td><%= attendee.email %></td>
+        <td><%= attendee.year %></td>
+        <td><%= attendee.year %></td>
+        <td><%= attendee.event_attendances.find_by(event: @event).attended_on.strftime("%Y-%m-%d %H:%M:%S") %></td>
+        <td>
+          <%= link_to 'View History', student_attendance_path(attendee), class: 'btn btn-outline-secondary' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back to Events', events_path, class: 'btn btn-primary' %>

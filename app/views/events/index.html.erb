@@ -1,0 +1,23 @@
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Event Name</th>
+      <th>Event Date</th>
+      <th>Total Attendees</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.date.strftime("%Y-%m-%d") %></td>
+        <td><%= event.students.count %></td>
+        <td><%= link_to 'View Attendees', event_path(event), class: 'btn btn-info' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

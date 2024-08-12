@@ -1,0 +1,8 @@
+<div class="container">
+        <h1 class="mt-5">Events Attended by <%= @student.name %></h1>
+        <ul class="list-group mt-3">
+            <% @events_attended.each do |event| %>
+                <li class="list-group-item"><%= event.name %> (on <%= event.date %>)</li>
+            <% end %>
+        </ul>
+</div>
