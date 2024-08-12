@@ -9,7 +9,7 @@ gem 'jquery-rails'
 # Gemfile
 gem "cssbundling-rails"
 
-gem 'webpacker'
+# gem 'webpacker'
 
 gem 'bcrypt', '~> 3.1.7'
 
